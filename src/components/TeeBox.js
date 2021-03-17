@@ -2,6 +2,7 @@ import { Route, Redirect } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { userStorageKey } from "./auth/authSettings"
+import { ApplicationViews } from "./ApplicationViews"
 
 export const TeeBox = () => (
     <>
@@ -9,7 +10,7 @@ export const TeeBox = () => (
         if (sessionStorage.getItem(userStorageKey)) {
           return (
             <>
-              //Components that are rendered when the user is authenticated go inside this React fragment
+              <ApplicationViews />
             </>
           )
         } else {
