@@ -1,0 +1,21 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Peyton",
+            "email": "peyton.kemp@gmail.com"
+        }
+    ],
+    "courses": [
+        {
+            "id": 1,
+            "name": "Harpeth Hills Golf Course",
+            "par": 72,
+            "slope": 126, 
+            "rating": 73.1
+        }
+    ],
+    "rounds": [
+
+    ]
+}
