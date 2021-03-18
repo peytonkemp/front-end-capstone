@@ -19,6 +19,10 @@ export const ApplicationViews = () => {
                         <RoundForm />
                     </Route>
 
+                    <Route path="/edit">
+                        <RoundForm />
+                    </Route>
+
                 {/* </CourseProvider> */}
             </RoundProvider>
         </>
