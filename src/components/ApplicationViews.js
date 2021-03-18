@@ -9,7 +9,7 @@ export const ApplicationViews = () => {
     return (
         <>
             <RoundProvider>
-                <CourseProvider>
+                {/* <CourseProvider> */}
 
                     <Route exact path="/">
                         <RoundList />
@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
                         <RoundForm />
                     </Route>
 
-                </CourseProvider>
+                {/* </CourseProvider> */}
             </RoundProvider>
         </>
     )
