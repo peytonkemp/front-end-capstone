@@ -26,7 +26,7 @@ export const RoundCard = ({round, course}) => {
             <h3 className="courseName">{course.name}</h3>
             <h4 className="roundScore">{round.score}</h4>
             <button className="editRoundButton" onClick={handleEdit}> Edit Event </button>
-            <button className="articleDeleteButton" onClick={handleDelete}>Delete Round</button>
+            <button className="roundDeleteButton" onClick={handleDelete}>Delete Round</button>
         </section>
     )
 }
