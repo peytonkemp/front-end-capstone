@@ -8,7 +8,7 @@ import "./Round.css"
 
 
 export const RoundList = () => {
-    const { round, getRounds } = useContext(RoundContext)
+    const { rounds, getRounds } = useContext(RoundContext)
     const history = useHistory()
 
     useEffect(() => {
@@ -31,7 +31,7 @@ export const RoundList = () => {
                     </Dropdown> */}
                     <div className="roundCards">
                         {  
-                            round.map(round => {
+                            rounds.map(round => {
                                 return <RoundCard key={round.id} round={round} />
                             })
                         }

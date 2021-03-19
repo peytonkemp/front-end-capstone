@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react"
 import { RoundContext } from "./RoundProvider"
 import { useHistory, useParams } from "react-router-dom";
 import "./Round.css"
+import { CourseContext } from "../courses/CourseProvider";
 
 export const RoundForm = () => {
     const { getRounds, addRound, getRoundById, saveRound, updateRound } = useContext(RoundContext)
+    const { courses, getCourses } = useContext(CourseContext)
     const { roundId } = useParams()
     const currentUserId = parseInt(sessionStorage.getItem("teeBox_user"))
 
@@ -26,6 +28,7 @@ export const RoundForm = () => {
     const history = useHistory()
 
     useEffect(() => {
+        getCourses()
         getRounds()
         if (roundId) {
             getRoundById(roundId)
@@ -70,9 +73,13 @@ export const RoundForm = () => {
         <form className="roundForm">
             <h2 className="roundFormTitle">{roundId ? "Edit Round" : "Add Round"}</h2>
             <fieldset>
-                <div>
-                    {/* COURSE DROPDOWN */}
-                </div>
+                <select>
+                    <option value="0">Please select a course...</option> {
+                        courses.map(course => {
+                            return <option value={course.id}>{course.name}</option>
+                        })
+                    }
+                </select>
                 <div>
                     <label htmlFor="roundScore">Round Score</label>
                     <input type="text" name="roundScore" id="score" onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" value={round.score}></input>
