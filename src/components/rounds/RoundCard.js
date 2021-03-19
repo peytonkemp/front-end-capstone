@@ -3,6 +3,7 @@ import { useHistory } from "react-router"
 import "./Round.css"
 import { RoundContext } from "./RoundProvider"
 import { useParams } from "react-router-dom";
+import { CourseContext } from "../courses/CourseProvider"
 
 export const RoundCard = ({round, course}) => {
     // const {roundId} = useParams()

@@ -17,13 +17,13 @@ export const RoundForm = () => {
         score: "", 
         date: ""
     })
-    // const [course, setCourse] = useState({
-    //     id: 0,
-    //     userId: currentUserId,
-    //     courseId: 0,
-    //     score: 0, 
-    //     date: ""
-    // })
+    const [course, setCourses] = useState({
+        id: 0,
+        userId: currentUserId,
+        courseId: 0,
+        score: 0, 
+        date: ""
+    })
 
     const history = useHistory()
 
@@ -39,19 +39,23 @@ export const RoundForm = () => {
     }, [])
 
     const handleControlledInputChange = (event) => {
+        // debugger
         const newRound = { ...round }
+        // const newCourse = { ...course }
         newRound[event.target.id] = event.target.value
+        // newCourse[event.target.id] = event.target.value
         setRound(newRound)
+        // setCourses(newRound)
     }
 
 
     const handleSaveRound = () => {
-        if ( round.score === "" || round.date === "" ) {
+        if ( course.id === "" || round.score === "" || round.date === "" ) {
             window.alert("Please complete all fields")
         } else {
             if (roundId) {
                 updateRound({
-                    // course: course.id,
+                    course: course.id,
                     score: round.score,
                     date: round.date,
                     userId: round.userId
@@ -59,7 +63,7 @@ export const RoundForm = () => {
                 .then(() => history.push("/"))
             } else {
                 addRound ({
-                    // course: course.id,
+                    course: course.id,
                     score: round.score,
                     date: round.date
                 })
@@ -73,7 +77,7 @@ export const RoundForm = () => {
         <form className="roundForm">
             <h2 className="roundFormTitle">{roundId ? "Edit Round" : "Add Round"}</h2>
             <fieldset>
-                <select>
+                <select onChange={handleControlledInputChange}>
                     <option value="0">Please select a course...</option> {
                         courses.map(course => {
                             return <option value={course.id}>{course.name}</option>
@@ -85,8 +89,8 @@ export const RoundForm = () => {
                     <input type="text" name="roundScore" id="score" onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" value={round.score}></input>
                 </div>
                 <div>
-                    <label htmlFor="roundDate">Date</label>
-                    <input type="text" name="roundDate" id="date" onChange={handleControlledInputChange} required className="form-control" placeholder="Date Played" value={round.date}></input>
+                    <label htmlFor="roundDate">Date Played</label>
+                    <input type="text" name="roundDate" id="date" onChange={handleControlledInputChange} required className="form-control" placeholder="ex. 6/25/20" value={round.date}></input>
                 </div>
             </fieldset>
             <button className="btn btn-primary"
