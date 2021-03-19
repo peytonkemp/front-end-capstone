@@ -10,11 +10,11 @@
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
-    border: 2px solid rgb(123, 168, 245);
+    border: 2px solid rgb(0, 82, 51);
     box-shadow:    3px 3px 3px 3px rgb(130, 149, 160)
 }
 
 .roundCard:hover {
-    background-color: rgb(199, 213, 255);
-    border: rgb(51, 118, 235) solid 1px;
+    background-color: rgb(193, 255, 190);
+    border: rgb(0, 82, 51) solid 2px;
 }

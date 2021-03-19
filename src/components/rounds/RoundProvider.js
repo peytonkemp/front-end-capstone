@@ -29,13 +29,13 @@ export const RoundProvider = (props) => {
         .then(getRounds)
     }
 
-    const updateRound = (roundObj) => {
-        return fetch(`http://localhost:8088/rounds/edit/${roundObj.id}`, {
+    const updateRound = (roundObjId) => {
+        return fetch(`http://localhost:8088/rounds/edit/${roundObjId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           }, 
-          body: JSON.stringify(roundObj)
+          body: JSON.stringify(roundObjId)
         })
         .then(getRounds)
       }
