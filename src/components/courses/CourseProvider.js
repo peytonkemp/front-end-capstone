@@ -3,12 +3,12 @@ import { useState, createContext } from "react";
 export const CourseContext = createContext()
 
 export const CourseProvider = (props) => {
-    const [ courses, setCourses ] = useState([])
+    const [ course, setCourse ] = useState([])
 
     const getCourses = () => {
         return fetch("http://localhost:8088/courses")
         .then(response => response.json())
-        .then(setRound)
+        .then(setCourse)
     }
 
     const addCourse = courseObj => {
@@ -25,7 +25,7 @@ export const CourseProvider = (props) => {
 
     return (
         <CourseContext.Provider value={{
-            courses, getCourses, addCourse
+            course, getCourses, addCourse
         }}>
             {props.children}
         </CourseContext.Provider>
