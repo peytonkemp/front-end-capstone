@@ -3,12 +3,12 @@ import { useState, createContext } from "react";
 export const RoundContext = createContext()
 
 export const RoundProvider = (props) => {
-    const [ rounds, setRounds ] = useState([])
+    const [ rounds, setRound ] = useState([])
 
     const getRounds = () => {
         return fetch("http://localhost:8088/rounds")
         .then(response => response.json())
-        .then(setRounds)
+        .then(setRound)
     }
 
     const addRound = roundObj => {

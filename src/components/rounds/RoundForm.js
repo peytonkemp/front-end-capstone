@@ -15,6 +15,13 @@ export const RoundForm = () => {
         score: 0, 
         date: ""
     })
+    // const [course, setCourse] = useState({
+    //     id: 0,
+    //     userId: currentUserId,
+    //     courseId: 0,
+    //     score: 0, 
+    //     date: ""
+    // })
 
     const history = useHistory()
 
@@ -35,6 +42,29 @@ export const RoundForm = () => {
     }
 
 
+    const handleSaveRound = () => {
+        if (course.id === "" || round.score === "" || round.date === "" ) {
+            window.alert("Please complete all fields")
+        } else {
+            if (roundId) {
+                updateRound({
+                    course: course.id,
+                    score: round.score,
+                    date: round.date,
+                    userId: round.userId
+                })
+                .then(() => history.push("/"))
+            } else {
+                addRound ({
+                    course: course.id,
+                    score: round.score,
+                    date: round.date
+                })
+                .then(() => history.push("/"))
+            }
+        }
+    }
+    
 
     return (
         <form className="roundForm">
@@ -55,9 +85,9 @@ export const RoundForm = () => {
             <button className="btn btn-primary"
               onClick={event => {
                 event.preventDefault()
-                // handleClickSaveEvent()
+                handleSaveRound()
             }}>
-              Save Event
+              {roundId ? "Save Round" : "Add Round"}
             </button>
         </form>
     )
