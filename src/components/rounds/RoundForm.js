@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import { RoundContext } from "./RoundProvider"
 import { useHistory, useParams } from "react-router-dom";
-// import "./Round.css"
+import "./Round.css"
 
 export const RoundForm = () => {
     const { getRounds, addRound, getRoundById, saveRound, updateRound } = useContext(RoundContext)
@@ -12,7 +12,7 @@ export const RoundForm = () => {
         id: 0,
         userId: currentUserId,
         courseId: 0,
-        score: 0, 
+        score: "", 
         date: ""
     })
     // const [course, setCourse] = useState({
@@ -43,12 +43,12 @@ export const RoundForm = () => {
 
 
     const handleSaveRound = () => {
-        if (course.id === "" || round.score === "" || round.date === "" ) {
+        if ( round.score === "" || round.date === "" ) {
             window.alert("Please complete all fields")
         } else {
             if (roundId) {
                 updateRound({
-                    course: course.id,
+                    // course: course.id,
                     score: round.score,
                     date: round.date,
                     userId: round.userId
@@ -56,7 +56,7 @@ export const RoundForm = () => {
                 .then(() => history.push("/"))
             } else {
                 addRound ({
-                    course: course.id,
+                    // course: course.id,
                     score: round.score,
                     date: round.date
                 })

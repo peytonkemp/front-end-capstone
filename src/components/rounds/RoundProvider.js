@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 export const RoundContext = createContext()
 
 export const RoundProvider = (props) => {
-    const [ rounds, setRound ] = useState([])
+    const [ round, setRound ] = useState([])
 
     const getRounds = () => {
         return fetch("http://localhost:8088/rounds")
@@ -44,7 +44,7 @@ export const RoundProvider = (props) => {
 
     return (
         <RoundContext.Provider value={{
-            rounds, getRounds, addRound, deleteRound, updateRound
+            round, getRounds, addRound, deleteRound, updateRound
         }}>
             {props.children}
         </RoundContext.Provider>

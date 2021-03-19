@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { useHistory } from "react-router"
-// import "./Round.css"
+import "./Round.css"
 import { RoundContext } from "./RoundProvider"
 
 export const RoundCard = ({round, course}) => {
@@ -23,7 +23,7 @@ export const RoundCard = ({round, course}) => {
 
     return (
         <section className="roundCard">
-            <h3 className="courseName">{course.name}</h3>
+            {/* <h3 className="courseName">{course.name}</h3> */}
             <h4 className="roundScore">{round.score}</h4>
             <h4 className="roundDate">{round.date}</h4>
             <button className="editRoundButton" onClick={handleEdit}> Edit Round </button>
