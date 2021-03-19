@@ -8,7 +8,7 @@ export const CourseProvider = (props) => {
     const getCourses = () => {
         return fetch("http://localhost:8088/courses")
         .then(response => response.json())
-        .then(setRounds)
+        .then(setRound)
     }
 
     const addCourse = courseObj => {
