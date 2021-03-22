@@ -13,6 +13,20 @@
       "par": 72,
       "slope": 126,
       "rating": 73.1
+    },
+    {
+      "id": 2,
+      "name": "McCabe Golf Course",
+      "par": 70,
+      "slope": 124,
+      "rating": 69.8
+    },
+    {
+      "id": 3,
+      "name": "Two Rivers Golf Course",
+      "par": 72,
+      "slope": 120,
+      "rating": 71.5
     }
   ],
   "rounds": [
@@ -22,6 +36,20 @@
       "date": "3/5/21",
       "userId": 1,
       "id": 1
+    },
+    {
+      "courseId": 1,
+      "score": 81,
+      "date": "5/1/21",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "courseId": 2,
+      "score": 100,
+      "date": "4/8/21",
+      "userId": 1,
+      "id": 3
     }
   ]
 }

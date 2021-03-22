@@ -5,14 +5,16 @@ import { RoundCard } from "./RoundCard";
 // import ReactBootstrap from 'react-bootstrap'
 // import { Dropdown } from "bootstrap";
 import "./Round.css"
+import { CourseContext } from "../courses/CourseProvider";
 
 
 export const RoundList = () => {
+    const { courses, getCourses } = useContext(CourseContext)
     const { rounds, getRounds } = useContext(RoundContext)
     const history = useHistory()
 
     useEffect(() => {
-        getRounds()
+        getCourses().then(getRounds)
     }, [])
 
 
@@ -32,7 +34,8 @@ export const RoundList = () => {
                     <div className="roundCards">
                         {  
                             rounds.map(round => {
-                                return <RoundCard key={round.id} round={round} />
+                                const course = courses.find(c => c.id === round.courseId)
+                                return <RoundCard key={round.id} round={round} course={course} />
                             })
                         }
                     </div>
