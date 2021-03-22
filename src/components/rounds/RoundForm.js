@@ -8,22 +8,16 @@ export const RoundForm = () => {
     const { getRounds, addRound, getRoundById, saveRound, updateRound } = useContext(RoundContext)
     const { courses, getCourses } = useContext(CourseContext)
     const { roundId } = useParams()
-    const currentUserId = parseInt(sessionStorage.getItem("teeBox_user"))
+    const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
 
     const [round, setRound] = useState({
-        id: 0,
         userId: currentUserId,
         courseId: 0,
         score: "", 
         date: ""
     })
-    const [course, setCourses] = useState({
-        id: 0,
-        userId: currentUserId,
-        courseId: 0,
-        score: 0, 
-        date: ""
-    })
+
+    console.log(round)
 
     const history = useHistory()
 
@@ -39,6 +33,7 @@ export const RoundForm = () => {
     }, [])
 
     const handleControlledInputChange = (event) => {
+        console.log(event.target.value)
         // debugger
         const newRound = { ...round }
         // const newCourse = { ...course }
@@ -50,22 +45,24 @@ export const RoundForm = () => {
 
 
     const handleSaveRound = () => {
-        if ( course.id === "" || round.score === "" || round.date === "" ) {
+        if ( round.score === 0 || round.date === "" ) {
             window.alert("Please complete all fields")
         } else {
             if (roundId) {
                 updateRound({
                     courseId: parseInt(round.courseId),
-                    score: round.score,
+                    score: parseInt(round.score),
                     date: round.date,
                     userId: round.userId
                 })
+                //need to push to id of round
                 .then(() => history.push("/"))
             } else {
                 addRound ({
                     courseId: parseInt(round.courseId),
-                    score: round.score,
-                    date: round.date
+                    score: parseInt(round.score),
+                    date: round.date,
+                    userId: currentUserId
                 })
                 .then(() => history.push("/"))
             }
@@ -77,10 +74,10 @@ export const RoundForm = () => {
         <form className="roundForm">
             <h2 className="roundFormTitle">{roundId ? "Edit Round" : "Add Round"}</h2>
             <fieldset>
-                <select onChange={handleControlledInputChange}>
+                <select value={round.courseId} name="courseId" onChange={handleControlledInputChange} id="courseId">
                     <option value="0">Please select a course...</option> {
                         courses.map(course => {
-                            return <option value={course.id}>{course.name}</option>
+                            return <option key={course.id} value={course.id}>{course.name}</option>
                         })
                     }
                 </select>

@@ -17,34 +17,11 @@
   ],
   "rounds": [
     {
-      "course": 0,
-      "score": "72",
+      "courseId": 1,
+      "score": 72,
       "date": "3/5/21",
-      "id": 2
-    },
-    {
-      "course": 0,
-      "score": "95",
-      "date": "4/8/21",
-      "id": 3
-    },
-    {
-      "courseId": 0,
-      "score": "69",
-      "date": "3/22/2021",
-      "id": 4
-    },
-    {
-      "courseId": 0,
-      "score": "70",
-      "date": "3/22/2021",
-      "id": 5
-    },
-    {
-      "courseId": 0,
-      "score": "100",
-      "date": "4/8/21",
-      "id": 6
+      "userId": 1,
+      "id": 1
     }
   ]
 }
