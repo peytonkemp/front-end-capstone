@@ -55,7 +55,7 @@ export const RoundForm = () => {
         } else {
             if (roundId) {
                 updateRound({
-                    course: course.id,
+                    courseId: parseInt(round.courseId),
                     score: round.score,
                     date: round.date,
                     userId: round.userId
@@ -63,7 +63,7 @@ export const RoundForm = () => {
                 .then(() => history.push("/"))
             } else {
                 addRound ({
-                    course: course.id,
+                    courseId: parseInt(round.courseId),
                     score: round.score,
                     date: round.date
                 })
@@ -98,7 +98,7 @@ export const RoundForm = () => {
                 event.preventDefault()
                 handleSaveRound()
             }}>
-              {roundId ? "Save Round" : "Add Round"}
+              {roundId ? "Edit Round" : "Add Round"}
             </button>
         </form>
     )
