@@ -16,11 +16,11 @@ export const ApplicationViews = () => {
                         <RoundList />
                     </Route>
 
-                    <Route path="/create">
+                    <Route exact path="/create">
                         <RoundForm />
                     </Route>
 
-                    <Route path="/edit">
+                    <Route exact path="/edit/:roundId(\d+)">
                         <RoundForm />
                     </Route>
 
