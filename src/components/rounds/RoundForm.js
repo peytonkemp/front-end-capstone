@@ -95,7 +95,7 @@ export const RoundForm = () => {
             </fieldset>
             <button className="btn btn-primary"
               onClick={event => {
-                // event.preventDefault()
+                event.preventDefault()
                 handleSaveRound()
             }}>
               {roundId ? "Save Round" : "Add Round"}

@@ -2,10 +2,11 @@ import { useContext, useEffect } from "react"
 import { RoundContext } from "./RoundProvider"
 import { useHistory } from "react-router"
 import { RoundCard } from "./RoundCard";
-// import ReactBootstrap from 'react-bootstrap'
-// import { Dropdown } from "bootstrap";
 import "./Round.css"
 import { CourseContext } from "../courses/CourseProvider";
+import { RoundForm } from "./RoundForm";
+// import ReactBootstrap from 'react-bootstrap'
+// import { Dropdown } from "bootstrap";
 
 
 export const RoundList = () => {
@@ -26,11 +27,16 @@ export const RoundList = () => {
             <section>
                 <h3>Rounds</h3>
                 <div className="rounds">
-                    {/* <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Dropdown Button
-                        </Dropdown.Toggle>
-                    </Dropdown> */}
+                    <div className="filterDropdown">
+                        <h5>Filter by course</h5>
+                        <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId">
+                            <option value="0">Filter by course...</option> {
+                                courses.map(course => {
+                                    return <option key={course.id} value={course.id}>{course.name}</option>
+                                })
+                            }
+                        </select>
+                    </div>
                     <div className="roundCards">
                         {  
                             rounds.map(round => {
