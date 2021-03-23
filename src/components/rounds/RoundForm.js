@@ -7,33 +7,35 @@ import { CourseContext } from "../courses/CourseProvider";
 export const RoundForm = () => {
     const { getRounds, addRound, getRoundById, saveRound, updateRound } = useContext(RoundContext)
     const { courses, getCourses } = useContext(CourseContext)
-    const { roundId } = useParams()
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
-
+    
     const [round, setRound] = useState({
         userId: currentUserId,
         courseId: 0,
         score: "", 
         date: ""
     })
-
-    console.log(round)
-
+    
+    // console.log(round)
+    
     const history = useHistory()
+    const { roundId } = useParams()
 
     useEffect(() => {
-        getCourses()
-        getRounds()
-        if (roundId) {
-            getRoundById(roundId)
-            .then(round => {
-                setRound(round)
-            })
-        }
+        getRounds().then(getCourses).then(() => {
+
+            if (roundId) {
+                getRoundById(roundId)
+                .then(round => {
+                    setRound(round)
+                })
+            }
+        })
     }, [])
 
+
     const handleControlledInputChange = (event) => {
-        console.log(event.target.value)
+        // console.log(event.target.value)
         // debugger
         const newRound = { ...round }
         // const newCourse = { ...course }
@@ -53,7 +55,8 @@ export const RoundForm = () => {
                     courseId: parseInt(round.courseId),
                     score: parseInt(round.score),
                     date: round.date,
-                    userId: round.userId
+                    userId: round.userId,
+                    id: roundId
                 })
                 //need to push to id of round
                 .then(() => history.push("/"))
@@ -83,7 +86,7 @@ export const RoundForm = () => {
                 </select>
                 <div>
                     <label htmlFor="roundScore">Round Score</label>
-                    <input type="text" name="roundScore" id="score" onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" value={round.score}></input>
+                    <input type="text" name="roundScore" id="score" defaultValue={round.score} onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" ></input>
                 </div>
                 <div>
                     <label htmlFor="roundDate">Date Played</label>
@@ -92,10 +95,10 @@ export const RoundForm = () => {
             </fieldset>
             <button className="btn btn-primary"
               onClick={event => {
-                event.preventDefault()
+                // event.preventDefault()
                 handleSaveRound()
             }}>
-              {roundId ? "Edit Round" : "Add Round"}
+              {roundId ? "Save Round" : "Add Round"}
             </button>
         </form>
     )

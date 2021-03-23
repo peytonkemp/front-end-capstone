@@ -11,6 +11,7 @@ export const RoundCard = ({round, course}) => {
     const history = useHistory()
     // const [round, setRound] = useState({})
 
+
     const handleDelete = () => {
         deleteRound(round.id)
         .then(() => {
@@ -19,18 +20,19 @@ export const RoundCard = ({round, course}) => {
     }
 
     const handleEdit = () => {
-        updateRound(round.id)
-        .then(() => {
             history.push(`/edit/${round.id}`)
-        })
-    }
+        }
+    
 
     return (
         <section className="roundCard">
-            {/* <h3 className="courseName">{course.name}</h3> */}
-            <h3 className="roundScore">{round.score} Strokes</h3>
+            <h3 className="courseName">{course.name}</h3>
+            <h2 className="roundScore">{round.score} Strokes</h2>
             <h4 className="roundDate">{round.date}</h4>
             <button className="editRoundButton" onClick={handleEdit}> Edit Round </button>
+            {/* <button className="editRoundButton" onClick={() => {
+                history.push(`/edit/${round.id}`)
+            }}> Edit Round </button> */}
             <button className="roundDeleteButton" onClick={handleDelete}>Delete Round</button>
         </section>
     )

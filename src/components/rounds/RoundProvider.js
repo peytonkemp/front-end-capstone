@@ -29,13 +29,18 @@ export const RoundProvider = (props) => {
         .then(getRounds)
     }
 
-    const updateRound = (roundObjId) => {
-        return fetch(`http://localhost:8088/rounds/edit/${roundObjId}`, {
+    const getRoundById = (roundId) => {
+        return fetch(`http://localhost:8088/rounds/${roundId}`)
+            .then(res => res.json())
+    }
+
+    const updateRound = roundObj => {
+        return fetch(`http://localhost:8088/rounds/${roundObj.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           }, 
-          body: JSON.stringify(roundObjId)
+          body: JSON.stringify(roundObj)
         })
         .then(getRounds)
       }
@@ -44,7 +49,7 @@ export const RoundProvider = (props) => {
 
     return (
         <RoundContext.Provider value={{
-            rounds, getRounds, addRound, deleteRound, updateRound
+            rounds, getRounds, addRound, deleteRound, updateRound, getRoundById
         }}>
             {props.children}
         </RoundContext.Provider>
