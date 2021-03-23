@@ -24,8 +24,8 @@ export const RoundForm = () => {
     useEffect(() => {
         getRounds().then(getCourses).then(() => {
 
-            if (round.id) {
-                getRoundById(round.id)
+            if (roundId) {
+                getRoundById(roundId)
                 .then(round => {
                     setRound(round)
                 })
@@ -55,7 +55,8 @@ export const RoundForm = () => {
                     courseId: parseInt(round.courseId),
                     score: parseInt(round.score),
                     date: round.date,
-                    userId: round.userId
+                    userId: round.userId,
+                    id: roundId
                 })
                 //need to push to id of round
                 .then(() => history.push("/"))
@@ -85,7 +86,7 @@ export const RoundForm = () => {
                 </select>
                 <div>
                     <label htmlFor="roundScore">Round Score</label>
-                    <input type="text" name="roundScore" id="score" defaultValue={round.score} onChange={handleControlledInputChange} required className="form-control"></input>
+                    <input type="text" name="roundScore" id="score" defaultValue={round.score} onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" ></input>
                 </div>
                 <div>
                     <label htmlFor="roundDate">Date Played</label>

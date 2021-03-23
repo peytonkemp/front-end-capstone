@@ -29,8 +29,8 @@ export const RoundProvider = (props) => {
         .then(getRounds)
     }
 
-    const getRoundById = (round) => {
-        return fetch(`http://localhost:8088/rounds/edit/${round.id}`)
+    const getRoundById = (roundId) => {
+        return fetch(`http://localhost:8088/rounds/${roundId}`)
             .then(res => res.json())
     }
 
