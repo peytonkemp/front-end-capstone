@@ -12,7 +12,9 @@ import { RoundForm } from "./RoundForm";
 export const RoundList = () => {
     const { courses, getCourses } = useContext(CourseContext)
     const { rounds, getRounds } = useContext(RoundContext)
-    const [ filteredRounds, setFiltered ] = useState([])
+    const [ filteredCourses, setFiltered ] = useState("0")
+    const [ filteredRounds, setFilteredRounds ] = useState([])
+
     const history = useHistory()
 
     useEffect(() => {
@@ -20,8 +22,15 @@ export const RoundList = () => {
     }, [])
 
     useEffect(() => {
-
-    })
+        if (filteredCourses !== "0") {
+            const filter = rounds.filter(round => {
+                return round.courseId === parseInt(filteredCourses)
+            })
+            setFilteredRounds(filter)
+        } else {
+            setFilteredRounds(rounds)
+        }
+    }, [filteredCourses])
 
     return (
         <>
@@ -34,7 +43,6 @@ export const RoundList = () => {
 
                     <div className="filterDropdown">
                         <h5>Filter by course</h5>
-
                         <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => setFiltered(e.target.value)}>
 
                             <option value="0">Filter by course...</option> {
@@ -48,7 +56,7 @@ export const RoundList = () => {
 
                     <div className="roundCards">
                         {  
-                            rounds.map(round => {
+                            filteredRounds.map(round => {
                                 const course = courses.find(c => c.id === round.courseId)
                                 return <RoundCard key={round.id} round={round} course={course} />
                             })
