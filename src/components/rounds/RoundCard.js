@@ -30,9 +30,6 @@ export const RoundCard = ({round, course}) => {
             <h2 className="roundScore">{round.score} Strokes</h2>
             <h4 className="roundDate">{round.date}</h4>
             <button className="editRoundButton" onClick={handleEdit}> Edit Round </button>
-            {/* <button className="editRoundButton" onClick={() => {
-                history.push(`/edit/${round.id}`)
-            }}> Edit Round </button> */}
             <button className="roundDeleteButton" onClick={handleDelete}>Delete Round</button>
         </section>
     )

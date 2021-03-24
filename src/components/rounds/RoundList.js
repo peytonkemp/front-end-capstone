@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { RoundContext } from "./RoundProvider"
 import { useHistory } from "react-router"
 import { RoundCard } from "./RoundCard";
@@ -12,12 +12,16 @@ import { RoundForm } from "./RoundForm";
 export const RoundList = () => {
     const { courses, getCourses } = useContext(CourseContext)
     const { rounds, getRounds } = useContext(RoundContext)
+    const [ filteredRounds, setFiltered ] = useState([])
     const history = useHistory()
 
     useEffect(() => {
         getCourses().then(getRounds)
     }, [])
 
+    useEffect(() => {
+
+    })
 
     return (
         <>
@@ -27,16 +31,21 @@ export const RoundList = () => {
             <section>
                 <h3>Rounds</h3>
                 <div className="rounds">
+
                     <div className="filterDropdown">
                         <h5>Filter by course</h5>
-                        <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId">
+
+                        <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => setFiltered(e.target.value)}>
+
                             <option value="0">Filter by course...</option> {
                                 courses.map(course => {
                                     return <option key={course.id} value={course.id}>{course.name}</option>
                                 })
                             }
+                            
                         </select>
                     </div>
+
                     <div className="roundCards">
                         {  
                             rounds.map(round => {
@@ -45,12 +54,15 @@ export const RoundList = () => {
                             })
                         }
                     </div>
+
                     <div className="addRoundButton">
                         <button className="roundButton" onClick={() => {history.push("/create")}}>Add Round</button>
                     </div>
+
                     <div className="handicapDiv">
                         <button className="calculateHandicapButton">Calculate Handicap</button>
                     </div>
+
                 </div>
             </section>
         </>
