@@ -5,7 +5,7 @@ import { RoundContext } from "./RoundProvider"
 import { useParams } from "react-router-dom";
 import { CourseContext } from "../courses/CourseProvider"
 
-export const RoundCard = ({round, course}) => {
+export const RoundCard = ({ round, course }) => {
     // const {roundId} = useParams()
     const { deleteRound, updateRound } = useContext(RoundContext)
     const history = useHistory()
