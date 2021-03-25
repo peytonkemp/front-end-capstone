@@ -37,50 +37,43 @@
   "rounds": [
     {
       "courseId": 1,
-      "score": 105,
+      "score": 85,
       "date": "3/5/21",
       "userId": 1,
       "id": 1
     },
     {
       "courseId": 2,
-      "score": 95,
+      "score": 85,
       "date": "5/1/21",
       "userId": 1,
       "id": 3
     },
     {
-      "courseId": 3,
-      "score": 100,
-      "date": "3/22/2021",
-      "userId": 1,
-      "id": 4
-    },
-    {
       "courseId": 2,
-      "score": 99,
+      "score": 88,
       "date": "3/5/21",
       "userId": 1,
       "id": 5
     },
     {
       "courseId": 3,
-      "score": 95,
+      "score": 85,
       "date": "4/8/21",
       "userId": 1,
       "id": 6
     },
     {
       "courseId": 1,
-      "score": 1000,
+      "score": 80,
       "date": "3/22/2021",
       "userId": 1,
       "id": 7
     },
     {
       "courseId": 1,
-      "score": 85,
-      "date": "4/9/2021",
+      "score": 79,
+      "date": "4/8/2021",
       "userId": 1,
       "id": 9
     },
@@ -97,6 +90,13 @@
       "date": "4/8/21",
       "userId": 1,
       "id": 11
+    },
+    {
+      "courseId": 2,
+      "score": 90,
+      "date": "4/8/21",
+      "userId": 2,
+      "id": 12
     }
   ]
 }
