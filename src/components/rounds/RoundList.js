@@ -43,7 +43,7 @@ export const RoundList = () => {
                 <div className="rounds">
 
                     <div className="filterDropdown">
-                        <h5>Filter by course</h5>
+                        <h5>Filter rounds by course</h5>
                         <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => setFiltered(e.target.value)}>
 
                             <option value="0">Filter by course...</option> {

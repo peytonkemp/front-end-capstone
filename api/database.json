@@ -90,13 +90,6 @@
       "date": "4/8/21",
       "userId": 1,
       "id": 11
-    },
-    {
-      "courseId": 2,
-      "score": 90,
-      "date": "4/8/21",
-      "userId": 2,
-      "id": 12
     }
   ]
 }
