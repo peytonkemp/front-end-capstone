@@ -13,23 +13,32 @@ export const Handicap = ({courseId}) => {
     // console.log(courseId)
     const userRounds = rounds.filter(round => round.userId === currentUserId)
     const userRoundsOnCourse = userRounds.filter(round => round.courseId === parseInt(courseId))
-
-    const courseRating = courses.map(course => {
-        if (course.id === parseInt(courseId)) {
-           return course.rating
-        }
-    })
-    const courseSlope = courses.map(course => {
-        if (course.id === parseInt(courseId)) {
-           return course.slope
-        }
-    })
-    console.log(courseRating.find(r => r !== undefined))
-    console.log(courseSlope.find(r => r !== undefined))
+    const matchingCourse = courses.find(course => course.id === parseInt(courseId))
+    // console.log(matchingCourse)
     // debugger
-    // console.log(userCourse)
+    const courseRating = matchingCourse?.rating
+    const courseSlope = matchingCourse?.slope
+    // console.log(courseRating)
+    // console.log(courseSlope)
 
-    // console.log(userRounds)
+    const arrOfScores = userRoundsOnCourse.map(userRoundOnCourse => userRoundOnCourse.score)
+    // console.log(arrOfScores)
+
+    let totalScore = 0
+    arrOfScores.map(score => totalScore = totalScore + score)
+    // console.log(totalScore)
+
+    const avScore = totalScore/arrOfScores.length
+    // console.log(avScore)
+
+    const scoreMinusRating = avScore - courseRating
+    const multiply = scoreMinusRating * 113
+    const handicap = multiply / courseSlope
+
+    const roundedHandicap = Math.round(handicap)
+    console.log('roundedHandicap: ', roundedHandicap);
+
+
 
     useEffect(() => {
         getRounds().then(getCourses)
@@ -37,7 +46,7 @@ export const Handicap = ({courseId}) => {
 
     return (
         <>
-            
+            {roundedHandicap}
         </>
     ) 
 }

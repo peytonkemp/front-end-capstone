@@ -55,7 +55,7 @@ export const RoundList = () => {
                         </select>
                     </div>
                     <div>
-                        <Handicap courseId={filteredCourses} />
+                        {filteredCourses !== "0" && <Handicap courseId={filteredCourses} />}
                     </div>
                     <div className="roundCards">
                         {  
