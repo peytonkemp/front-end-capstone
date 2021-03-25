@@ -5,6 +5,7 @@ import { RoundCard } from "./RoundCard";
 import "./Round.css"
 import { CourseContext } from "../courses/CourseProvider";
 import { RoundForm } from "./RoundForm";
+import { Handicap } from "../courses/CourseHandicap";
 // import ReactBootstrap from 'react-bootstrap'
 // import { Dropdown } from "bootstrap";
 
@@ -53,7 +54,9 @@ export const RoundList = () => {
                             
                         </select>
                     </div>
-
+                    <div>
+                        <Handicap courseId={filteredCourses} />
+                    </div>
                     <div className="roundCards">
                         {  
                             filteredRounds.map(round => {
@@ -76,3 +79,5 @@ export const RoundList = () => {
         </>
     )
 }
+
+// ((score - rating) * 113) / slope = handicap
