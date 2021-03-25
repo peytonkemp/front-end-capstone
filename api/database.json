@@ -4,6 +4,11 @@
       "id": 1,
       "name": "Peyton",
       "email": "peyton.kemp@gmail.com"
+    },
+    {
+      "email": "peyton@peyton.com",
+      "name": "P K",
+      "id": 2
     }
   ],
   "courses": [
@@ -64,6 +69,34 @@
       "date": "4/8/21",
       "userId": 1,
       "id": 6
+    },
+    {
+      "courseId": 1,
+      "score": 1000,
+      "date": "3/22/2021",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "courseId": 1,
+      "score": 85,
+      "date": "4/9/2021",
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "courseId": 1,
+      "score": 85,
+      "date": "4/9/2021",
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "courseId": 2,
+      "score": 90,
+      "date": "4/8/21",
+      "userId": 1,
+      "id": 11
     }
   ]
 }

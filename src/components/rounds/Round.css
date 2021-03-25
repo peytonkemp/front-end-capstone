@@ -21,7 +21,7 @@
 }
 
 .filterDropdown {
-    background-color: rgb(0, 82, 51);
+    background-color: rgb(0, 67, 51);
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 1px;
@@ -29,6 +29,7 @@
 
 .dropdownBox {
     color: rgb(255, 255, 255);
-    background-color: rgb(0, 75, 68);
+    background-color: rgb(0, 67, 60);
     margin: 5px;
+    border-color: rgb(252, 231, 0);
 }

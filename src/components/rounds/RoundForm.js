@@ -8,7 +8,7 @@ export const RoundForm = () => {
     const { getRounds, addRound, getRoundById, saveRound, updateRound } = useContext(RoundContext)
     const { courses, getCourses } = useContext(CourseContext)
     const currentUserId = parseInt(sessionStorage.getItem("app_user_id"))
-    
+
     const [round, setRound] = useState({
         userId: currentUserId,
         courseId: 0,
@@ -23,7 +23,6 @@ export const RoundForm = () => {
 
     useEffect(() => {
         getRounds().then(getCourses).then(() => {
-
             if (roundId) {
                 getRoundById(roundId)
                 .then(round => {
@@ -58,7 +57,6 @@ export const RoundForm = () => {
                     userId: round.userId,
                     id: roundId
                 })
-                //need to push to id of round
                 .then(() => history.push("/"))
             } else {
                 addRound ({
