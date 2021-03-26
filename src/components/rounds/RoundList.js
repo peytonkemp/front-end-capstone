@@ -36,14 +36,14 @@ export const RoundList = () => {
     return (
         <>
             <header>
-                <h1>TeeBox</h1>
+                <h1 className="h1">Tennessee TeeBox</h1>
             </header>
             <section>
-                <h3>Rounds</h3>
+                <h1 className="h3">Rounds</h1>
                 <div className="rounds">
 
                     <div className="filterDropdown">
-                        <h5>Filter rounds by course</h5>
+                        <h5 className="h5" >Select a course</h5>
                         <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => setFiltered(e.target.value)}>
 
                             <option value="0">Filter by course...</option> {
@@ -54,7 +54,15 @@ export const RoundList = () => {
                             
                         </select>
                     </div>
+                    <div className="addRoundButton">
+                        <button className="roundButton" onClick={() => {history.push("/create")}}>Add Round</button>
+                    </div>
                     <div>
+                        <div className="handicapDiv">
+                            <button className="calculateHandicapButton" onClick={() => {
+                                return 
+                            }}>Calculate Handicap</button>
+                        </div>
                         {filteredCourses !== "0" && <Handicap courseId={filteredCourses} />}
                     </div>
                     <div className="roundCards">
@@ -66,13 +74,7 @@ export const RoundList = () => {
                         }
                     </div>
 
-                    <div className="addRoundButton">
-                        <button className="roundButton" onClick={() => {history.push("/create")}}>Add Round</button>
-                    </div>
 
-                    <div className="handicapDiv">
-                        <button className="calculateHandicapButton">Calculate Handicap</button>
-                    </div>
 
                 </div>
             </section>
