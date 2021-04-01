@@ -9,6 +9,11 @@
       "email": "peyton@peyton.com",
       "name": "P K",
       "id": 2
+    },
+    {
+      "email": "kemp@kemp.com",
+      "name": "p k",
+      "id": 3
     }
   ],
   "courses": [
@@ -50,13 +55,6 @@
       "id": 3
     },
     {
-      "courseId": 2,
-      "score": 88,
-      "date": "3/5/21",
-      "userId": 1,
-      "id": 5
-    },
-    {
       "courseId": 3,
       "score": 85,
       "date": "4/8/21",
@@ -85,16 +83,9 @@
       "id": 10
     },
     {
-      "courseId": 2,
-      "score": 90,
-      "date": "4/8/21",
-      "userId": 1,
-      "id": 11
-    },
-    {
       "courseId": 3,
       "score": 69,
-      "date": "3/6/2021",
+      "date": "3/5/2021",
       "userId": 1,
       "id": 12
     },
@@ -114,10 +105,45 @@
     },
     {
       "courseId": 2,
-      "score": 75,
-      "date": "4/10/2021",
+      "score": 86,
+      "date": "3/26/2021",
       "userId": 1,
       "id": 15
+    },
+    {
+      "courseId": 2,
+      "score": 80,
+      "date": "3/1/2021",
+      "userId": 1,
+      "id": 16
+    },
+    {
+      "courseId": 3,
+      "score": 89,
+      "date": "3/6/2021",
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "courseId": 2,
+      "score": 72,
+      "date": "4/8/21",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "courseId": 1,
+      "score": 81,
+      "date": "3/26/2021",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "courseId": 3,
+      "score": 76,
+      "date": "4/8/21",
+      "userId": 1,
+      "id": 20
     }
   ]
 }
