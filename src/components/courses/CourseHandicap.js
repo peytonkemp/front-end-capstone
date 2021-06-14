@@ -36,7 +36,7 @@ export const Handicap = ({courseId}) => {
     const handicap = multiply / courseSlope
 
     const roundedHandicap = Math.round(handicap)
-    console.log('roundedHandicap: ', roundedHandicap);
+    // console.log('roundedHandicap: ', roundedHandicap);
 
 
 

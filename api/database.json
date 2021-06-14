@@ -14,6 +14,11 @@
       "email": "kemp@kemp.com",
       "name": "p k",
       "id": 3
+    },
+    {
+      "email": "pk@pk.com",
+      "name": "p k",
+      "id": 4
     }
   ],
   "courses": [
@@ -41,13 +46,6 @@
   ],
   "rounds": [
     {
-      "courseId": 1,
-      "score": 85,
-      "date": "3/5/21",
-      "userId": 1,
-      "id": 1
-    },
-    {
       "courseId": 2,
       "score": 85,
       "date": "5/1/21",
@@ -70,7 +68,7 @@
     },
     {
       "courseId": 1,
-      "score": 79,
+      "score": 72,
       "date": "4/8/2021",
       "userId": 1,
       "id": 9
@@ -84,7 +82,7 @@
     },
     {
       "courseId": 3,
-      "score": 69,
+      "score": 100,
       "date": "3/5/2021",
       "userId": 1,
       "id": 12
