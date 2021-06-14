@@ -34,14 +34,9 @@ export const RoundForm = () => {
 
 
     const handleControlledInputChange = (event) => {
-        // console.log(event.target.value)
-        // debugger
         const newRound = { ...round }
-        // const newCourse = { ...course }
         newRound[event.target.id] = event.target.value
-        // newCourse[event.target.id] = event.target.value
         setRound(newRound)
-        // setCourses(newRound)
     }
 
 

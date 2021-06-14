@@ -20,14 +20,16 @@ export const RoundCard = ({ round, course }) => {
     }
 
     const handleEdit = () => {
-            history.push(`/edit/${round.id}`)
-        }
+        history.push(`/edit/${round.id}`)
+    }
     
+    const scoreToPar = round.score - 72
 
     return (
         <section className="roundCard">
             <h3 className="courseName">{course.name}</h3>
             <h2 className="roundScore">{round.score} Strokes</h2>
+            <h3 className="roundScoreToPar">{scoreToPar}</h3>
             <h4 className="roundDate">{round.date}</h4>
             <button className="editRoundButton" onClick={handleEdit}> Edit Round </button>
             <button className="roundDeleteButton" onClick={handleDelete}>Delete Round</button>

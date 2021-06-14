@@ -16,6 +16,7 @@ export const RoundList = () => {
     const [ filteredCourses, setFiltered ] = useState("0")
     const [ filteredRounds, setFilteredRounds ] = useState([])
 
+    // console.log(courses)
     const history = useHistory()
 
     useEffect(() => {
@@ -73,13 +74,8 @@ export const RoundList = () => {
                             })
                         }
                     </div>
-
-
-
                 </div>
             </section>
         </>
     )
 }
-
-// ((score - rating) * 113) / slope = handicap
