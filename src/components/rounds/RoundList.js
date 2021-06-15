@@ -36,7 +36,7 @@ export const RoundList = () => {
 
     return (
         <>
-            <header>
+            <header className="header">
                 <h1 className="h1">Tennessee TeeBox</h1>
             </header>
             <section>

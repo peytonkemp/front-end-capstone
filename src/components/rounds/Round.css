@@ -1,3 +1,7 @@
+.header {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
 .roundCards {
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +19,7 @@
     color: white;
     padding: 1em;
     border: rgb(234, 255, 0) solid 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .roundCard:hover {
@@ -22,6 +27,7 @@
     background-color: rgb(234, 255, 2);
     border: rgb(0, 107, 84) solid 2px;
     color: rgb(0, 107, 84);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .filterDropdown {
@@ -64,6 +70,7 @@ html {
     padding-bottom: 0%;
     font-size: 2em;
     -webkit-text-stroke: .5px rgb(0, 107, 84);
+    
 }
 
 .h5 {
@@ -77,8 +84,37 @@ html {
 
 .roundScore {
     margin-bottom: 0;
+    margin-top: 2em;
 }
 
 .roundScoreToPar {
     margin-top: 1px;
+    margin-bottom: 2em;
+}
+
+.courseName {
+    margin-top: 0;
+}
+
+.editRoundButton {
+    transition-duration: 0.4s;
+    color: rgb(0, 107, 84);
+    border: white;
+}
+
+.roundDeleteButton {
+    transition-duration: 0.4s;
+    color: rgb(0, 107, 84);
+    border: white;
+}
+.editRoundButton:hover {
+    background-color: rgb(0, 107, 84);
+    color: white;
+    border: rgb(0, 107, 84) solid 2px;;
+}
+
+.roundDeleteButton:hover {
+    background-color: rgb(0, 107, 84);
+    color: white;
+    border: rgb(0, 107, 84) solid 2px;;
 }
