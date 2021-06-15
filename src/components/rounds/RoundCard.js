@@ -26,13 +26,13 @@ export const RoundCard = ({ round, course }) => {
     const scoreToPar = () => {
         const parScore = round.score - course.par
         if (parScore > 0) {
-            return "(+"+parScore+")"
+            return "( +"+parScore+" )"
         }
         if (parScore < 0) {
-            return "("+parScore+")"
+            return "( "+parScore+" )"
         } 
         if (parScore === 0) {
-            return "E"
+            return "( E )"
         }
     }
 
