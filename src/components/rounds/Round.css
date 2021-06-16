@@ -1,5 +1,5 @@
 .header {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .roundCards {
@@ -19,7 +19,7 @@
     color: white;
     padding: 1em;
     border: rgb(234, 255, 0) solid 2px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .roundCard:hover {
@@ -27,7 +27,7 @@
     background-color: rgb(234, 255, 2);
     border: rgb(0, 107, 84) solid 2px;
     color: rgb(0, 107, 84);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.19)
 }
 
 .filterDropdown {

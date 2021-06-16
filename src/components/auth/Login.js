@@ -43,10 +43,10 @@ export const Login = () => {
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
             </dialog>
-            <section>
+            <section className="login">
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>TeeBox</h1>
-                    <h3>Please sign in</h3>
+                    <h1 className="login--header">TeeBox</h1>
+                    <h3 className="pleaseSignIn">Please sign in</h3>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input type="email"
@@ -58,15 +58,17 @@ export const Login = () => {
                             onChange={handleInputChange} />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button type="submit" className="signInButton">
                             Sign in
                         </button>
                     </fieldset>
                 </form>
+                <div className="registerLink">
+                    <Link to="/register">Register for an account</Link>
+                </div>
             </section>
-            <section className="link--register">
-                <Link to="/register">Register for an account</Link>
-            </section>
+            {/* <section className="link--register">
+            </section> */}
         </main>
     )
 }
