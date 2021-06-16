@@ -32,12 +32,12 @@ export const RoundList = () => {
         } else {
             setFilteredRounds(rounds)
         }
-    }, [filteredCourses])
-
+    }, [filteredCourses, rounds])
+    
     return (
         <>
             <header className="header">
-                <h1 className="h1">Tennessee TeeBox</h1>
+                <h1 className="h1">TeeBox</h1>
             </header>
             <section>
                 <h1 className="h3">Rounds</h1>
