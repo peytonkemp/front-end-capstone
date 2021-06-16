@@ -62,8 +62,8 @@ export const Register = () => {
                 <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Application Name</h1>
+            <form className="register" onSubmit={handleRegister}>
+                <h1 className="">Please Register for TeeBox</h1>
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
                     <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
