@@ -6,7 +6,7 @@ export const RoundProvider = (props) => {
     const [ rounds, setRounds ] = useState([])
 
     const getRounds = () => {
-        return fetch("http://localhost:8088/rounds")
+        return fetch(`http://localhost:8088/rounds?userId=${sessionStorage.getItem('app_user_id')}`)
         .then(response => response.json())
         .then(setRounds)
     }

@@ -6,6 +6,7 @@ import "./Round.css"
 import { CourseContext } from "../courses/CourseProvider";
 import { RoundForm } from "./RoundForm";
 import { Handicap } from "../courses/CourseHandicap";
+import { roundedHandicap } from "../courses/CourseHandicap";
 // import ReactBootstrap from 'react-bootstrap'
 // import { Dropdown } from "bootstrap";
 
@@ -15,8 +16,9 @@ export const RoundList = () => {
     const { rounds, getRounds } = useContext(RoundContext)
     const [ filteredCourses, setFiltered ] = useState("0")
     const [ filteredRounds, setFilteredRounds ] = useState([])
+    const [ roundedHandicap, setRoundedHandicap ] = useState([])
+    const [ showHandicap, setShowHandicap ] = useState(false)
 
-    // console.log(courses)
     const history = useHistory()
 
     useEffect(() => {
@@ -33,7 +35,13 @@ export const RoundList = () => {
             setFilteredRounds(rounds)
         }
     }, [filteredCourses, rounds])
-    
+
+
+    const calculateButton = () => {
+        setShowHandicap(true)
+    }
+
+
     return (
         <>
             <header className="header">
@@ -45,7 +53,11 @@ export const RoundList = () => {
 
                     <div className="filterDropdown">
                         <h5 className="h5" >Select a course</h5>
-                        <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => setFiltered(e.target.value)}>
+                        <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => {
+                            setFiltered(e.target.value)
+                            setShowHandicap(false)
+                            }
+                            }>
 
                             <option value="0">Filter by course...</option> {
                                 courses.map(course => {
@@ -60,11 +72,9 @@ export const RoundList = () => {
                     </div>
                     <div>
                         <div className="handicapDiv">
-                            <button className="calculateHandicapButton" onClick={() => {
-                                return 
-                            }}>Calculate Handicap</button>
+                            <button className="calculateHandicapButton" onClick={calculateButton} >Calculate Handicap</button>
+                            {filteredCourses !== "0" && showHandicap && <Handicap courseId={filteredCourses} />}
                         </div>
-                        {filteredCourses !== "0" && <Handicap courseId={filteredCourses} />}
                     </div>
                     <div className="roundCards">
                         {  

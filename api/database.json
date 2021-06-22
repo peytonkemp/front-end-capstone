@@ -47,9 +47,9 @@
   "rounds": [
     {
       "courseId": 2,
-      "score": 85,
+      "score": 86,
       "date": "5/1/21",
-      "userId": 1,
+      "userId": 2,
       "id": 3
     },
     {
@@ -72,13 +72,6 @@
       "date": "4/8/2021",
       "userId": 1,
       "id": 9
-    },
-    {
-      "courseId": 1,
-      "score": 85,
-      "date": "4/9/2021",
-      "userId": 1,
-      "id": 10
     },
     {
       "courseId": 3,
@@ -135,6 +128,13 @@
       "date": "4/8/21",
       "userId": 1,
       "id": 20
+    },
+    {
+      "courseId": 1,
+      "score": 58,
+      "date": "6/25/21",
+      "userId": 1,
+      "id": 21
     }
   ]
 }
