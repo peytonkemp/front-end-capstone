@@ -64,7 +64,7 @@ export const Register = () => {
 
             <form className="register" onSubmit={handleRegister}>
                 <h1 className="">Please Register for TeeBox</h1>
-                <fieldset>
+                <fieldset className="register--fieldset">
                     <label htmlFor="firstName"> First Name </label>
                     <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
                 </fieldset>

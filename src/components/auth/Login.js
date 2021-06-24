@@ -48,7 +48,7 @@ export const Login = () => {
                     <h1 className="login--header">TeeBox</h1>
                     <h3 className="pleaseSignIn">Please sign in</h3>
                     <fieldset className="login--fieldset">
-                        <label htmlFor="inputEmail"> Email address </label>
+                        <label className="email--label" htmlFor="inputEmail">Email address  </label>
                         <input type="email"
                             id="email"
                             className="form-control"
