@@ -15,9 +15,7 @@ export const RoundForm = () => {
         score: "", 
         date: ""
     })
-    
-    // console.log(round)
-    
+
     const history = useHistory()
     const { roundId } = useParams()
 
@@ -64,28 +62,27 @@ export const RoundForm = () => {
             }
         }
     }
-    
+
 
     return (
         <form className="roundForm">
             <h2 className="roundFormTitle">{roundId ? "Edit Round" : "Add Round"}</h2>
-            <fieldset>
-                <select value={round.courseId} name="courseId" onChange={handleControlledInputChange} id="courseId">
+            <fieldset className="fieldset">
+                <select className="form__dropdown" value={round.courseId} name="courseId" onChange={handleControlledInputChange} id="courseId">
                     <option value="0">Please select a course...</option> {
                         courses.map(course => {
                             return <option key={course.id} value={course.id}>{course.name}</option>
                         })
                     }
                 </select>
-                <div>
-                    <label htmlFor="roundScore">Round Score</label>
+                <div className="score__div">
+                    <label htmlFor="roundScore">Round Score  </label>
                     <input type="text" name="roundScore" id="score" defaultValue={round.score} onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" ></input>
                 </div>
-                <div>
-                    <label htmlFor="roundDate">Date Played</label>
+                <div className="date__div">
+                    <label htmlFor="roundDate">Date Played </label>
                     <input type="text" name="roundDate" id="date" onChange={handleControlledInputChange} required className="form-control" placeholder="ex. 6/25/20" value={round.date}></input>
                 </div>
-            </fieldset>
             <button className="btn btn-primary"
               onClick={event => {
                 event.preventDefault()
@@ -93,6 +90,7 @@ export const RoundForm = () => {
             }}>
               {roundId ? "Save Round" : "Add Round"}
             </button>
+            </fieldset>
         </form>
     )
 
