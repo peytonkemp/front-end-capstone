@@ -40,7 +40,7 @@ export const Handicap = ({ courseId }) => {
 
     return (
         <>
-            <div className="handicapDiv">
+            <div className="handicap">
                 {roundedHandicap}
             </div>
         </>
