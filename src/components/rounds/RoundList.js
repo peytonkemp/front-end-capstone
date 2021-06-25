@@ -14,10 +14,10 @@ import { roundedHandicap } from "../courses/CourseHandicap";
 export const RoundList = () => {
     const { courses, getCourses } = useContext(CourseContext)
     const { rounds, getRounds } = useContext(RoundContext)
-    const [ filteredCourses, setFiltered ] = useState("0")
-    const [ filteredRounds, setFilteredRounds ] = useState([])
-    const [ roundedHandicap, setRoundedHandicap ] = useState([])
-    const [ showHandicap, setShowHandicap ] = useState(false)
+    const [filteredCourses, setFiltered] = useState("0")
+    const [filteredRounds, setFilteredRounds] = useState([])
+    const [roundedHandicap, setRoundedHandicap] = useState([])
+    const [showHandicap, setShowHandicap] = useState(false)
 
     const history = useHistory()
 
@@ -56,19 +56,19 @@ export const RoundList = () => {
                         <select className="dropdownBox" value={rounds.courseId} name="courseId" id="courseId" onChange={(e) => {
                             setFiltered(e.target.value)
                             setShowHandicap(false)
-                            }
-                            }>
+                        }
+                        }>
 
                             <option value="0">Filter by course...</option> {
                                 courses.map(course => {
                                     return <option key={course.id} value={course.id}>{course.name}</option>
                                 })
                             }
-                            
+
                         </select>
                     </div>
                     <div className="addRoundButton">
-                        <button className="roundButton" onClick={() => {history.push("/create")}}>Add Round</button>
+                        <button className="roundButton" onClick={() => { history.push("/create") }}>Add Round</button>
                     </div>
                     <div>
                         <div className="handicapDiv">
@@ -77,7 +77,7 @@ export const RoundList = () => {
                         </div>
                     </div>
                     <div className="roundCards">
-                        {  
+                        {
                             filteredRounds.map(round => {
                                 const course = courses.find(c => c.id === round.courseId)
                                 return <RoundCard key={round.id} round={round} course={course} />
