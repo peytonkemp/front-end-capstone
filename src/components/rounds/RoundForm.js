@@ -12,7 +12,7 @@ export const RoundForm = () => {
     const [round, setRound] = useState({
         userId: currentUserId,
         courseId: 0,
-        score: "", 
+        score: "",
         date: ""
     })
 
@@ -23,9 +23,9 @@ export const RoundForm = () => {
         getRounds().then(getCourses).then(() => {
             if (roundId) {
                 getRoundById(roundId)
-                .then(round => {
-                    setRound(round)
-                })
+                    .then(round => {
+                        setRound(round)
+                    })
             }
         })
     }, [])
@@ -39,7 +39,7 @@ export const RoundForm = () => {
 
 
     const handleSaveRound = () => {
-        if ( round.score === 0 || round.date === "" ) {
+        if (round.score === 0 || round.date === "") {
             window.alert("Please complete all fields")
         } else {
             if (roundId) {
@@ -50,15 +50,15 @@ export const RoundForm = () => {
                     userId: round.userId,
                     id: roundId
                 })
-                .then(() => history.push("/"))
+                    .then(() => history.push("/"))
             } else {
-                addRound ({
+                addRound({
                     courseId: parseInt(round.courseId),
                     score: parseInt(round.score),
                     date: round.date,
                     userId: currentUserId
                 })
-                .then(() => history.push("/"))
+                    .then(() => history.push("/"))
             }
         }
     }
@@ -83,13 +83,13 @@ export const RoundForm = () => {
                     <label htmlFor="roundDate">Date Played </label>
                     <input type="text" name="roundDate" id="date" onChange={handleControlledInputChange} required className="form-control" placeholder="ex. 6/25/20" value={round.date}></input>
                 </div>
-            <button className="btn btn-primary"
-              onClick={event => {
-                event.preventDefault()
-                handleSaveRound()
-            }}>
-              {roundId ? "Save Round" : "Add Round"}
-            </button>
+                <button className="btn btn-primary"
+                    onClick={event => {
+                        event.preventDefault()
+                        handleSaveRound()
+                    }}>
+                    {roundId ? "Save Round" : "Add Round"}
+                </button>
             </fieldset>
         </form>
     )

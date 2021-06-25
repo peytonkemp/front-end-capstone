@@ -14,23 +14,23 @@ export const RoundCard = ({ round, course }) => {
 
     const handleDelete = () => {
         deleteRound(round.id)
-        .then(() => {
-            history.push("/")
-        })
+            .then(() => {
+                history.push("/")
+            })
     }
 
     const handleEdit = () => {
         history.push(`/edit/${round.id}`)
     }
-    
+
     const scoreToPar = () => {
         const parScore = round.score - course.par
         if (parScore > 0) {
-            return "( +"+parScore+" )"
+            return "( +" + parScore + " )"
         }
         if (parScore < 0) {
-            return "( "+parScore+" )"
-        } 
+            return "( " + parScore + " )"
+        }
         if (parScore === 0) {
             return "( E )"
         }
