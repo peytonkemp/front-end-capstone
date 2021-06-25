@@ -24,6 +24,11 @@
       "email": "sb@sb.com",
       "name": "Steve Brownlee",
       "id": 5
+    },
+    {
+      "email": "sbb@sb.com",
+      "name": "ss bb",
+      "id": 6
     }
   ],
   "courses": [
@@ -66,28 +71,28 @@
     },
     {
       "courseId": 1,
-      "score": 92,
+      "score": 78,
       "date": "4/8/2021",
       "userId": 1,
       "id": 9
     },
     {
       "courseId": 3,
-      "score": 100,
+      "score": 79,
       "date": "3/5/2021",
       "userId": 1,
       "id": 12
     },
     {
       "courseId": 3,
-      "score": 88,
+      "score": 80,
       "date": "3/5/21",
       "userId": 1,
       "id": 14
     },
     {
       "courseId": 2,
-      "score": 86,
+      "score": 79,
       "date": "3/26/2021",
       "userId": 1,
       "id": 15

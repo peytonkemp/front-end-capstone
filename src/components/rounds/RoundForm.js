@@ -76,7 +76,7 @@ export const RoundForm = () => {
                     }
                 </select>
                 <div className="score__div">
-                    <label htmlFor="roundScore">Round Score  </label>
+                    <label htmlFor="roundScore">Round Score </label>
                     <input type="text" name="roundScore" id="score" defaultValue={round.score} onChange={handleControlledInputChange} required className="form-control" placeholder="Strokes" ></input>
                 </div>
                 <div className="date__div">

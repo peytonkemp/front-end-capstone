@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { authApi, userStorageKey } from "./authSettings"
 import "./Login.css"
+import "./Register.css"
 
 export const Register = () => {
 
@@ -55,7 +56,7 @@ export const Register = () => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--register" style={{ textAlign: "center" }}>
 
             <dialog className="dialog dialog--password" open={conflictDialog}>
                 <div>Account with that email address already exists</div>
@@ -63,8 +64,8 @@ export const Register = () => {
             </dialog>
 
             <form className="register" onSubmit={handleRegister}>
-                <h1 className="">Please Register for TeeBox</h1>
-                <fieldset>
+                <h1 className="register--header">Please Register for TeeBox</h1>
+                <fieldset className="register--fieldset">
                     <label htmlFor="firstName"> First Name </label>
                     <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
                 </fieldset>
@@ -77,7 +78,7 @@ export const Register = () => {
                     <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Sign in </button>
+                    <button className="register--signin" type="submit"> Sign in </button>
                 </fieldset>
             </form>
         </main>

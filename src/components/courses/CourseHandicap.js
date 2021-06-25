@@ -3,6 +3,7 @@
 import { useContext, useEffect } from "react"
 import { RoundContext } from "../rounds/RoundProvider"
 import { CourseContext } from "./CourseProvider"
+import "./handicap.css"
 
 
 export const Handicap = ({ courseId }) => {
@@ -40,8 +41,8 @@ export const Handicap = ({ courseId }) => {
 
     return (
         <>
-            <div className="handicap">
-                {roundedHandicap}
+            <div className="roundedHandicap">
+                Your handicap is {roundedHandicap}
             </div>
         </>
     )
